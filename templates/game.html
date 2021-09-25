@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<h2> Pick your weapon:</h2>
+<form method="POST">
+    <label for= "Player 1"> Player 1:</label>
+    <select name= "Player 1" id = "Player 1">
+        {% for weapon in weapons %}
+            <option value = "{{weapon}}" SELECTED>{{weapon}}</option>
+        {% endfor %}
+        </select>
+        <label for= "Player 2"> Player 2:</label>
+    <select name= "Player 2" id = "Player 2">
+        {% for weapon in weapons %}
+            <option value = "{{weapon}}" SELECTED>{{weapon}}</option>
+        {% endfor %}
+        </select>
+     
+    <button type = "submit">Play!</button> 
+</form>
+<hr>
+
+
+<h2> And the winner is:
+    "{{ result }}"
+</h2>
+
+
+{%  endblock %}
